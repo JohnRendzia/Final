@@ -110,11 +110,11 @@ cor(data$Views, data$Likes)
 ####################  STEP 6: Linear Regression                ####################   
 ##################################################################################
 
-#Slope is .02 likes for each new view
+#Every view increases subscribers by .0013808
 #Small P Value indicates a strong predictor 
-#48.12% of like variability can be explained by views
+#42.73% of like variability can be explained by views
 #Good F statistic low standard error = high confidence
-linear_relationship <- lm(data$Likes ~ data$Views)
+linear_relationship <- lm(data$Subscribers ~ data$Views)
 summary(linear_relationship)
 
 
@@ -122,11 +122,11 @@ summary(linear_relationship)
 ####################  STEP 7: Figure 1                                ####################   
 ##################################################################################
 #slopes#
-plot(data$Views, data$Likes)
+plot(data$Views, data$Subscribers)
 
 abline(linear_relationship, col = "red")
 #establish y mean#
-abline(h=mean(data$Likes),col = "red")
+abline(h=mean(data$Subscribers),col = "red")
 abline(h=y_mean)
 
 #establish x mean#
